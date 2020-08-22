@@ -86,6 +86,19 @@ public:
 		ExtractMax();
 	}
 
+	void HeapSort(){
+		int arr[15],n=size;
+		for(int i=0;i<n;i++){
+			arr[i]=heap[1];
+			ExtractMax();
+		}
+		cout<<"SORTED ARRAY : ";
+		for(int i=0;i<n;i++){
+			cout<<arr[i]<<'\t';
+		}
+		cout<<endl;
+	}
+
 };
 BinaryHeap B;
 
@@ -101,7 +114,7 @@ int main(){
 	cout<<"HEAP : ";
 	B.output();
 	cout<<"\nENTER OPERATION : \n";
-	cout<<"1.Insert\n2.Get Max\n3.Extract Max\n4.Change Priority\n5.Remove Element"<<endl;
+	cout<<"1.Insert\n2.Get Max\n3.Extract Max\n4.Change Priority\n5.Remove Element\n6.Heap Sort"<<endl;
 	cin>>choice;
 	switch(choice){
 		case 1: cout<<"ENTER THE VALUE : ";
@@ -117,6 +130,9 @@ int main(){
 		case 4: B.ChangePriority();
 				break;
 		case 5: B.Remove();
+				break;
+		case 6: B.HeapSort();
+				exit(0);
 				break;
 		default : 
 				cout<<"Invalid choice";
